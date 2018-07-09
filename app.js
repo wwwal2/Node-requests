@@ -24,8 +24,14 @@ helpFromNpm({
     url: `http://api.ipstack.com/${userIpInput}?access_key=a690d859ca69cf463ec76784323e294b`,
     json: true
 }, (error, response, body) => {
-    console.log(body.continent_name, body.city);
-    console.log(`Latitude: ${body.latitude}, Longitude: ${body.longitude}`);
+    if (error) {
+        console.log('Something wrong with node api');
+    } else if (body.continent_name === null) {
+        console.log('There is no such IP. Try to use \'114.101.250.125\'');
+    } else if (body.continent_name) {
+        console.log(`Continent: ${body.continent_name}, City: ${body.city}`);
+        console.log(`Latitude: ${body.latitude}, Longitude: ${body.longitude}`);
+    }
 });
 
 
