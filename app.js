@@ -13,8 +13,6 @@ const parsedYargs = helpFromNpm2
     .argv;
 
 
-
-
 helpFromHdd.userIpInput(parsedYargs.ipAddress, (errorMessage, coordinatesResult) => {
     if (errorMessage) {
         console.log(errorMessage);

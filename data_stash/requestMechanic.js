@@ -13,7 +13,7 @@ const userIpInput = (ip, callback) => {
         json: true
     }, (error, response, body) => {
         if (error) {
-            callback('Something wromg with coordinates block in api', undefined);
+            callback('Something wromg with coordinates block in app', undefined);
         } else if (body.continent_name === null) {
             callback('There is no such IP. Try to use \'114.101.250.125\'', undefined);
         } else if (body.continent_name) {
