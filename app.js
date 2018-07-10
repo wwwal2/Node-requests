@@ -15,7 +15,7 @@ const parsedYargs = helpFromNpm2
 
 
 
-helpFromHdd.userIpInput(parsedYargs.ipAddress, function (errorMessage, callbackResults) {
+helpFromHdd.userIpInput(parsedYargs.ipAddress, (errorMessage, callbackResults) => {
     if (errorMessage) {
         console.log(errorMessage);
     } else {
